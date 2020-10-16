@@ -19,6 +19,6 @@ class MessagesController < ApplicationController
 
   def message_params
     # 配列[]に対しての保存を許可
-    params.require(:message).permit(:content).merge(user_id: current_user.id)
+    params.require(:message).permit(:content, :image).merge(user_id: current_user.id)
   end
 end
