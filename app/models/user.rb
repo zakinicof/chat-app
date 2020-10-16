@@ -5,5 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   # nameが空の状態でユーザー登録できないように設定
   validates :name, presence: true
-
+  has_many :room_users
+  # 中間テーブルを経由
+  has_many :rooms, through: :room_users
 end
