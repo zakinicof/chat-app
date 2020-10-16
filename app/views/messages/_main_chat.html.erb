@@ -12,36 +12,8 @@
 </div>
 
 <div class="messages">
-  <div class="message">
-    <div class="upper-message">
-      <div class="message-user">
-        Zaki
-      </div>
-      <div class="message-date">
-        2020/10/16(Fri) 09:20:20
-      </div>
-    </div>
-    <div class="lower-message">
-      <div class="message-content">
-        おはよう
-      </div>
-    </div>
-  </div>
-  <div class="message">
-    <div class="upper-message">
-      <div class="message-user">
-        Zaki
-      </div>
-      <div class="message-date">
-        2020/10/16(Fri) 09:25:20
-      </div>
-    </div>
-    <div class="lower-message">
-      <div class="message-content">
-        こんにちは
-      </div>
-    </div>
-  </div>
+  <%# _message.html.erbを部分テンプレートとして、読み込む %>
+  <%= render partial: 'message', collection: @messages %>
 </div>
     
 <%= form_with model: [@room, @message], class: 'form', local: true do |f| %>
